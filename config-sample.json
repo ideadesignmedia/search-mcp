@@ -1,0 +1,7 @@
+{
+    "SERPER_DEV_API_KEY": "YOUR_API_KEY",
+    "SERPER_DEV_BASE_URL": "https://google.serper.dev",
+    "SERPER_DEV_TIMEOUT_MS": 10000,
+    "MCP_TRANSPORTS": "stdio",
+    "PORT": 4000
+}
