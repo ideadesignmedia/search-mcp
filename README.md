@@ -55,10 +55,10 @@ Transports
 When running with `MCP_TRANSPORTS=http`, you can connect an MCP client to `http://localhost:$PORT/mcp`.
 
 ### NPX
-- After publishing this package to npm (name `search-mcp`), you can run:
-  - HTTP: `npx search-mcp --http --port 4510 --key $SERPER_DEV_API_KEY`
-  - STDIO (process stdio): `npx search-mcp --stdio --key $SERPER_DEV_API_KEY`
-- STDIO (file-backed): `npx search-mcp --stdio --stdio-files` (creates `./mcp-stdio.in/.out`)
+- After publishing this package to npm (name `@ideadesignmedia/search-mcp`), you can run:
+  - HTTP: `npx @ideadesignmedia/search-mcp --http --port 4510 --key $SERPER_DEV_API_KEY`
+  - STDIO (process stdio): `npx @ideadesignmedia/search-mcp --stdio --key $SERPER_DEV_API_KEY`
+  - STDIO (file-backed): `npx @ideadesignmedia/search-mcp --stdio --stdio-files` (creates `./mcp-stdio.in/.out`)
   - Optional logging: add `--log-file ./server.log` and/or `--verbose` (stderr)
 
 Flags
@@ -74,6 +74,10 @@ Notes for STDIO:
 - Avoid printing to stdout; use stderr or `--verbose` for a minimal status line.
 - To force skipping config.json: set `MCP_NO_CONFIG=1`.
 - To write logs to a file: `--log-file ./server.log` (safe in all transports)
+
+Publish
+- Ensure `dist` is built and included (already handled by `files` + `prepublishOnly`).
+- `npm publish --access public` (scoped public package)
 
 ## Tools
 - `serper_search`

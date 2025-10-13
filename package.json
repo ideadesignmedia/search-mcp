@@ -1,9 +1,36 @@
 {
   "name": "@ideadesignmedia/search-mcp",
   "version": "1.0.0",
+  "description": "Serper.dev MCP server with search/fetch tools",
   "main": "dist/server.js",
   "author": "Sam Wagner <60307610+ideadesignmedia@users.noreply.github.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ideadesignmedia/search-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ideadesignmedia/search-mcp/issues"
+  },
+  "homepage": "https://github.com/ideadesignmedia/search-mcp#readme",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "serper",
+    "search",
+    "open-ai.js"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "config-sample.json"
+  ],
   "bin": {
     "search-mcp": "dist/cli.js"
   },
