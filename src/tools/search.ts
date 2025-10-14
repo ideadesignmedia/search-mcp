@@ -50,7 +50,7 @@ export const createSearchTool = (
   client: SerperClient,
 ): McpToolHandlerOptions<typeof searchDefinition> => ({
   tool: searchDefinition,
-  handler: async (args: SearchArguments): Promise<SerperSearchResponse> => {
+  handler: async (args: SearchArguments): Promise<SerperSearchResponse & { content: Array<{ type: string; json?: unknown; text?: string }> }> => {
     const { query, limit, language, country, autocorrect } = args;
 
     if (typeof query !== "string" || query.trim().length === 0) {
@@ -64,6 +64,13 @@ export const createSearchTool = (
       autocorrect: typeof autocorrect === "boolean" ? autocorrect : undefined,
     });
 
-    return results;
+    // Return structured content per typical assistant tool expectations
+    return {
+      ...results,
+      content: [
+        { type: "text", text: JSON.stringify(results) },
+      ],
+    };
   },
 });
+

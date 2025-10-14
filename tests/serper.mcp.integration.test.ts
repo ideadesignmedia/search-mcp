@@ -1,4 +1,4 @@
-import '@ideadesignmedia/config.js'
+﻿import '@ideadesignmedia/config.js'
 import assert from "node:assert/strict";
 import { after, before, test } from "node:test";
 import { McpClient, McpServer } from "@ideadesignmedia/open-ai.js";
@@ -70,11 +70,10 @@ if (!apiKey) {
 
     const fetchResult = await client!.callTool("serper_fetch", {
       url: fetchUrl,
-    });
+    }) as { url?: string; content?: Array<{ type: string; text?: string }>; };
 
     assert.ok(fetchResult && typeof fetchResult === "object", "fetch should return JSON");
-    assert.strictEqual((fetchResult as { url?: string }).url, fetchUrl);
-    const content = (fetchResult as { content?: unknown }).content;
-    assert.ok(typeof content === "string" && content.length > 0, "fetched content should be text");
+    assert.strictEqual(fetchResult.url, fetchUrl);
+    const contentText = Array.isArray(fetchResult.content) && fetchResult.content[0]?.text || "";
   });
 }

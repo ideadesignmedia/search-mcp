@@ -15,7 +15,7 @@ const startServer = async (): Promise<void> => {
   // Avoid stdout noise when running under stdio transport
   if (!runtimeConfig.transports.includes("stdio")) {
     console.log(
-      `Serper.dev MCP server listening on transports: ${runtimeConfig.transports.join(", ")}`,
+      `Serper.dev MCP server listening on transports${runtimeConfig.port ? ` (PORT: ${runtimeConfig.port})` : ''}: ${runtimeConfig.transports.join(", ")}`,
     );
   }
 };

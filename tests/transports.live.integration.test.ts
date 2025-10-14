@@ -1,4 +1,4 @@
-import "@ideadesignmedia/config.js";
+﻿import "@ideadesignmedia/config.js";
 import assert from "node:assert/strict";
 import { test } from "node:test";
 import { McpClient, McpServer } from "@ideadesignmedia/open-ai.js";
@@ -52,13 +52,11 @@ const runToolFlow = async (client: McpClient, ctx: string) => {
   log(`${ctx}: search organic count`, Array.isArray(organic) ? organic.length : 0);
   log(`${ctx}: knowledgeGraph?`, kg ? true : false);
 
-  const fetchResult = (await time(`${ctx}: serper_fetch`, () => client.callTool("serper_fetch", { url: fetchUrl })) ) as {
-    url?: string;
-    content?: string;
-  };
+  const fetchResult = (await time(`${ctx}: serper_fetch`, () => client.callTool("serper_fetch", { url: fetchUrl }))) as { url?: string; content?: string; contentParts?: Array<{ type: string; text?: string }> };
+  const contentText = Array.isArray(fetchResult.content) && fetchResult.content[0]?.text || "";
   assert.equal(fetchResult.url, fetchUrl);
-  assert.ok(typeof fetchResult.content === "string" && fetchResult.content.length > 0);
-  log(`${ctx}: fetch length`, fetchResult.content?.length);
+  assert.ok(typeof contentText === "string" && contentText.length > 0);
+  log(`${ctx}: fetch length`, contentText.length);
 };
 
 if (!suiteSkip) {

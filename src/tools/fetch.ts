@@ -37,6 +37,10 @@ export const createFetchTool = (
     }
 
     const content = await client.fetchResultContent(url);
-    return { url, content };
+    return {
+      url,
+      content: [{ type: "text", text: content }]
+    };
   },
 });
+
