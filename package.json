@@ -1,6 +1,6 @@
 {
   "name": "@ideadesignmedia/search-mcp",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Serper.dev MCP server with search/fetch tools",
   "main": "dist/server.js",
   "author": "Sam Wagner <60307610+ideadesignmedia@users.noreply.github.com>",
@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "@ideadesignmedia/config.js": "^1.0.3",
-    "@ideadesignmedia/open-ai.js": "^2.1.11",
+    "@ideadesignmedia/open-ai.js": "^2.1.13",
     "@ideadesignmedia/request": "^1.1.0"
   },
   "devDependencies": {

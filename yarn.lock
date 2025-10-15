@@ -28,10 +28,10 @@
     extract-zip "^2.0.1"
     mime-types "^2.1.35"
 
-"@ideadesignmedia/open-ai.js@^2.1.11":
-  version "2.1.11"
-  resolved "https://registry.yarnpkg.com/@ideadesignmedia/open-ai.js/-/open-ai.js-2.1.11.tgz#9842e78182f63467f9c7dce39ee631c867f79d68"
-  integrity sha512-CrA0z3o0Gw/eUsP0OzAedz64ABEbBPmcJZcTVOAzArnQGETglIf0BBmkjek8W6uJnnxpbvad9gjEl4XNg5jA6Q==
+"@ideadesignmedia/open-ai.js@^2.1.13":
+  version "2.1.13"
+  resolved "https://registry.yarnpkg.com/@ideadesignmedia/open-ai.js/-/open-ai.js-2.1.13.tgz#10f496813b71a9c38a9ba556c7dab1f5460e34d1"
+  integrity sha512-4uNEpgM0ov5Ke4sRk2Hb/QGT1GU6UCLxh7nvk4e27hlZSZHwSaHN70WxBbCDaXNiBSJNM9rdcrF9Srigf1dIeA==
   dependencies:
     "@ideadesignmedia/arguments.js" latest
     "@ideadesignmedia/helpers" latest
